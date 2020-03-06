@@ -1,6 +1,8 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+layout: "{{.Name}}"
+description: "This is the meta description"
+menu: main
 draft: true
 ---
 

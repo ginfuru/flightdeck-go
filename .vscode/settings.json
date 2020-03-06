@@ -9,10 +9,4 @@
     "/public/**": true,
     "/resources/_gen/": true
   },
-  "recommendations": [
-    "kaellarkin.hugo-shortcode-syntax",
-    "budparr.language-hugo-vscode",
-    "editorconfig.editorconfig",
-    "esbenp.prettier-vscode"
-  ]
 }
