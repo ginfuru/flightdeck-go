@@ -1,0 +1,22 @@
+{
+  "name": "flightdeck-go",
+  "version": "0.0.1",
+  "description": "FlightDeck is an opinionated starter project for Hugo.",
+  "main": "index.js",
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginfuru/flightdeck-go.git"
+  },
+  "keywords": [
+    "hugo"
+  ],
+  "author": "Ed Heltzel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ginfuru/flightdeck-go/issues"
+  },
+  "homepage": "https://github.com/ginfuru/flightdeck-go#readme"
+}
