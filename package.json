@@ -6,8 +6,9 @@
   "scripts": {
     "start": "hugo serve --buildDrafts --buildFuture --environment development",
     "build": "hugo --gc --minify --environment production",
-    "build:preview": " hugo --gc --environement production",
-    "images": "gulp images"
+    "build:preview": "hugo --gc --environement production",
+    "imagemin": "gulp imagemin",
+    "deploy": "echo 'Well boys, I think I hooked it a little to hard to the right. WIP'"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "autoprefixer": "^9.7.4",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
+    "gulp-rsync": "0.0.8",
     "imagemin-mozjpeg": "^8.0.0",
     "postcss-cli": "^7.1.0"
   }
