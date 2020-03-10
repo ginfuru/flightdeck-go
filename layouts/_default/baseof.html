@@ -4,6 +4,14 @@
     {{ block "meta" . }}
       {{ partial "global/meta.html" . }}
     {{ end }}
+    <title>
+      {{ block "title" . }}
+        {{ with .Title }}{{.}} | {{ end }}{{ .Site.Title }}
+      {{ end }}
+    </title>
+    {{ block "styles" . }}
+      {{ partial "global/styles.html" . }}
+    {{ end }}
   </head>
   <body>
 
