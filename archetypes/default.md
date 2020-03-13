@@ -1,5 +1,5 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "{{- replace .Name "-" " " | title -}}"
 layout: "{{.Name}}"
 description: "This is the meta description"
 menu: main

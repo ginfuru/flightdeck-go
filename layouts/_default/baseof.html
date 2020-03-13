@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default: "en" }} ">
+<html lang="{{- .Site.LanguageCode | default: "en" -}} ">
   <head>
-    {{ block "meta" . }}
-      {{ partial "global/meta.html" . }}
-    {{ end }}
-    <title>
-      {{ block "title" . }}
-        {{ with .Title }}{{.}} | {{ end }}{{ .Site.Title }}
-      {{ end }}
-    </title>
-    {{ block "styles" . }}
-      {{ partial "global/styles.html" . }}
-    {{ end }}
-  </head>
-  <body>
+    {{- block "meta" . -}}
+      {{- partial "global/meta.html" . -}}
+    {{- end -}}
 
+    <title>
+      {{- block "title" . -}}
+        {{- with .Title -}}{{-.-}} | {{- end -}}
+        {{- .Site.Title -}}
+      {{- end -}}
+    </title>
+
+    {{- block "styles" . -}}
+      {{- partial "global/styles.html" . -}}
+    {{- end -}}
+  </head>
+
+  <body>
+    <main>
+      {{- block "main" . -}}
+
+      {{- end -}}
+    </main>
+
+    {{- block "footer" . -}}
+      {{- partial "core/footer.html" . -}}
+    {{- end -}}
+
+    {{- block "scripts" . -}}
+      {{- partial "global/scripts.html" . -}}
+    {{- end -}}
+
+
+    {{ block "custom-page-scripts" . }}{{ end }}
+
+    {{- if eq hugo.Environment "production" -}}
+      {{ template "_internal/google_analytics_async.html" . }}
+    {{- end -}}
   </body>
 </html>

@@ -1,0 +1,15 @@
+{{/* Checks if enviroment is production or development */}}
+
+{{- if eq hugo.Environment "production" -}}
+
+  {{ $script := resources.Get "js/scripts.js" | minify | fingerprint }}
+
+  <script src="{{ $script.Permalink }}"></script>
+
+{{- else -}}
+
+  {{ $script := resources.Get "js/scripts.js" }}
+
+  <script src="{{ $script.Permalink }}"></script>
+
+{{- end -}}
