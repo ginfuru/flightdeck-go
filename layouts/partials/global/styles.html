@@ -2,15 +2,15 @@
 
 {{- if eq hugo.Environment "production" -}}
 
-  {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed") -}}
-  {{- $style := resources.Get "sass/styles.scss" | toCSS $options | resources.PostCSS (dict "config" "postcss.config.js") | fingerprint "md5" -}}
+  {{- $options := (dict "targetPath" "css/app.css" "outputStyle" "compressed") -}}
+  {{- $style := resources.Get "sass/app.scss" | toCSS $options | resources.PostCSS (dict "config" "postcss.config.js") | fingerprint "md5" -}}
 
   <link rel="stylesheet" href="{{- $style.Permalink -}}" />
 
 {{- else -}}
 
   {{- $options := (dict "outputStyle" "expanded" "enableSourceMap" true) -}}
-  {{- $style := resources.Get "sass/styles.scss" | toCSS $options -}}
+  {{- $style := resources.Get "sass/app.scss" | toCSS $options -}}
 
   <link rel="stylesheet" href="{{- $style.Permalink -}}" />
 
