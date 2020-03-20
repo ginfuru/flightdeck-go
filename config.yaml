@@ -1,9 +1,8 @@
 baseURL: "http://example.org/"
 languageCode: en-us
-title: Welcome to FlightDeck-Go
-
-[params]
-
+title: 'Flightdeck: A Scaffold for Hugo'
+description: >
+  Flightdeck is a scaffold and starter project for Hugo that uses an opinionated modern front-end workflow.
 
 
 # SEO Privacy
