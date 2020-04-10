@@ -9,5 +9,11 @@
     "/public/**": true,
     "/resources/_gen/": true
   },
-  "extensions.showRecommendationsOnlyOnDemand": true
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#cdec4c",
+    "titleBar.activeForeground": "#5c28fa",
+    "titleBar.inactiveBackground": "#5c28fa5D",
+    "titleBar.inactiveForeground": "#cdec4c",
+  }
 }

@@ -1,4 +1,4 @@
 {
-  "trailingComma": "es5",
-  "quoteProps": "preserve"
+  "printWidth": 100,
+  "singleQuote": true
 }
