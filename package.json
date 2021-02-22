@@ -1,43 +1,32 @@
 {
   "name": "flightdeck-go",
-  "version": "0.0.1",
-  "description": "FlightDeck is an opinionated starter project for Hugo.",
-  "main": "index.js",
-  "scripts": {
-    "start": "hugo serve --buildDrafts --buildFuture --environment development",
-    "build": "hugo --gc --minify --environment production",
-    "build:preview": "hugo --gc --environement production",
-    "imagemin": "gulp imagemin",
-    "deploy": "echo 'Well boys, I think I hooked it a little to hard to the right. WIP'"
-  },
+  "version": "1.0.0",
+  "homepage": "https://github.com/ginfuru/flightdeck-go#readme",
+  "description": "FlightDeck - an opinionated starter project for Hugo and IS NOT a theme",
+  "author": "Ed Heltzel",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ginfuru/flightdeck-go.git"
   },
-  "keywords": [
-    "hugo"
-  ],
-  "author": "Ed Heltzel",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ginfuru/flightdeck-go/issues"
   },
-  "homepage": "https://github.com/ginfuru/flightdeck-go#readme",
-  "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.1.0",
-    "autoprefixer": "^9.7.4",
-    "gulp": "^4.0.2",
-    "gulp-eslint": "^6.0.0",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-newer": "^1.4.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-rsync": "0.0.8",
-    "gulp-svg-symbols": "^3.2.3",
-    "gulp-svgmin": "^2.2.0",
-    "gulp-watch": "^5.0.1",
-    "postcss-cli": "^7.1.0",
-    "require-dir": "^1.2.0"
+  "main": "index.js",
+  "scripts": {
+    "start": "hugo server -D -F -e development",
+    "preview": "hugo server -e production",
+    "build": "hugo --gc --minify -e production",
+    "build:preview": " hugo --gc -e production",
+    "images": "gulp images",
+    "deploy": "echo 'Well boys, I think I hooked it a little to hard to the right. WIP'",
+    "clean": "rm -rf public/ node_modules/ package-lock.json yarn.lock"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.2.0",
+    "autoprefixer": "^9.6.1",
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^6.0.0",
+    "postcss-cli": "^6.1.3"
+  }
 }

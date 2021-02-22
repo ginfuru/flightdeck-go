@@ -1,22 +1,62 @@
-// @ts-nocheck
-"use strict";
-
-const config = require("./flightdeck.manifest.js");
-const gulp = require("gulp");
-const requireDir = require("require-dir");
-
-requireDir("./gulp_tasks", { recurse: true });
-
-const tasks = [];
-Object.keys(config.tasks).forEach((key) => {
-  if (config.tasks[key] && key != "eslint") {
-    tasks.push(key == "webpack" && config.tasks.watch ? "_" + key : key);
-  }
-});
+'use strict';
 
 /**
- * Default task, running just `gulp` will minify the images,
- * compile the sass, bundle the js, launch BrowserSync, and
- * watch files.
+ * LOAD PLUGINS
  */
-gulp.task("default", tasks);
+
+const {
+  series,
+  parallel,
+  src,
+  dest,
+  watch
+} = require('gulp'),
+  imagemin = require('gulp-imagemin');
+
+/**
+ * PATHS OBJECT
+ *
+ * Contains all the relevant paths for gulp tasks
+ */
+const paths = {
+  images: {
+    src: './static/img/**/*{gif,png,jpg,JPG}'
+  }
+}
+
+
+/**
+ * IMAGES TASK
+ *
+ * Uses imagemin to optimize images
+ */
+
+function images(done) {
+  src(paths.images.src)
+    .pipe(imagemin([
+      imagemin.gifsicle({
+        interlaced: true
+      }),
+      imagemin.jpegtran({
+        progressive: true
+      }),
+      imagemin.optipng({
+        optimizationLevel: 5
+      }),
+      imagemin.svgo({
+        plugins: [{
+            removeViewBox: true
+          },
+          {
+            cleanupIDs: false
+          }
+        ]
+      })
+    ], {
+      verbose: true
+    }))
+    .pipe(dest(paths.images.src));
+    done();
+}
+
+exports.images = images;

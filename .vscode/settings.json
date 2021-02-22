@@ -10,10 +10,10 @@
     "/resources/_gen/": true
   },
   "extensions.showRecommendationsOnlyOnDemand": true,
-  "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#289ffa",
-    "titleBar.activeForeground": "#061b3a",
-    "titleBar.inactiveBackground": "#289ffa5D",
-    "titleBar.inactiveForeground": "#cdec4c",
-  }
+  // "workbench.colorCustomizations": {
+  //   "titleBar.activeBackground": "#289ffa",
+  //   "titleBar.activeForeground": "#061b3a",
+  //   "titleBar.inactiveBackground": "#289ffa5D",
+  //   "titleBar.inactiveForeground": "#cdec4c",
+  // }
 }
