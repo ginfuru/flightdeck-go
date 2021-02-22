@@ -18,7 +18,7 @@
     "preview": "hugo server -e production",
     "build": "hugo --gc --minify -e production",
     "build:preview": " hugo --gc -e production",
-    "images": "gulp images",
+    "imagemin": "gulp imagemin",
     "deploy": "echo 'Well boys, I think I hooked it a little to hard to the right. WIP'",
     "clean": "rm -rf public/ node_modules/ package-lock.json yarn.lock"
   },
@@ -27,6 +27,7 @@
     "autoprefixer": "^10.2.4",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
+    "npm-run-all": "^4.1.5",
     "postcss-cli": "^8.3.1",
     "yarn-upgrade-all": "^0.5.4"
   }

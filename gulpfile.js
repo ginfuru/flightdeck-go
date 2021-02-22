@@ -58,5 +58,16 @@ function images(done) {
     .pipe(dest(paths.images.src));
     done();
 }
+/**
+ * TODO:
+ * finish watchImages function
+ * add npm-run-all to npm scripts
+ *
+ * https://gist.github.com/jeromecoupe/0b807b0c1050647eb340360902c3203a
+ */
+// Watch Images
+// function watchImages() {
+//   gulp.watch("./assets/img/**/*", images);
+// }
 
-exports.images = images;
+exports.images = imagemin;
